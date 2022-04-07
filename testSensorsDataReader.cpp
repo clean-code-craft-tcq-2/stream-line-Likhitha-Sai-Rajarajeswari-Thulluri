@@ -12,5 +12,5 @@ TEST_CASE("simulate and read data from sensors") {
   sensorsData.temperatureSensorData = 25;
   sensorsData.pressureSensorData = 5;
   sensorsDataHolder.push_back(sensorsData);
-  REQUIRE(std::equal(readSensorsData(), sensorsDataHolder));
+  REQUIRE(readSensorsData() == sensorsDataHolder);
 }
