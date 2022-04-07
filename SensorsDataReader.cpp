@@ -1,7 +1,6 @@
 #include "SensorsDataReader.h"
 #include "BMSData.txt"
 
-#include <string>
 #include <fstream>
 #include <sstream>
 
