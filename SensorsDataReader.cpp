@@ -4,7 +4,6 @@
 #include <iostream>
 
 #include "SensorsDataReader.h"
-#include "BMSData.txt"
 
 std::vector<SensorsData> readSensorsData() {
   std::vector<SensorsData> sensorsDataHolder;
