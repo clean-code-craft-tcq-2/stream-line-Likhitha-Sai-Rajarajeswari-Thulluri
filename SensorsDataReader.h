@@ -1,4 +1,6 @@
-Struct SensorsData{
+#include<vector>
+
+struct SensorsData{
   int temperatureSensorData;
   int pressureSensorData;
 }
