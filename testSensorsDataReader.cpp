@@ -6,11 +6,11 @@
 TEST_CASE("simulate and read data from sensors") {
   std::vector<SensorsData> sensorsDataHolder;
   Struct SensorsData sensorsData;
-  sensorsData.temperatureSensor = 21;
-  sensorsData.pressureSensor = 15;
+  sensorsData.temperatureSensorData = 21;
+  sensorsData.pressureSensorData = 15;
   sensorsDataHolder.push_back(sensorsData);
-  sensorsData.temperatureSensor = 25;
-  sensorsData.pressureSensor = 5;
+  sensorsData.temperatureSensorData = 25;
+  sensorsData.pressureSensorData = 5;
   sensorsDataHolder.push_back(sensorsData);
   REQUIRE(readSensorsData() == sensorsDataHolder);
 }
