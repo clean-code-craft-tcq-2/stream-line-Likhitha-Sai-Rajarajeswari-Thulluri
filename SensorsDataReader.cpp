@@ -1,13 +1,24 @@
-#include"SensorsDataReader.h"
+#include "SensorsDataReader.h"
+#include "BMSData.txt"
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 std::vector<SensorsData> readSensorsData() {
   std::vector<SensorsData> sensorsDataHolder;
-  struct SensorsData sensorsData;
-  sensorsData.temperatureSensorData = 21;
-  sensorsData.pressureSensorData = 15;
-  sensorsDataHolder.push_back(sensorsData);
-  sensorsData.temperatureSensorData = 25;
-  sensorsData.pressureSensorData = 5;
-  sensorsDataHolder.push_back(sensorsData);
+  std::ifstream File;
+  File.open("BMSData.txt", std::ios_base::out);
+  if (File.is_open())
+  {
+    std::string line;
+    while(std::gtline(File, line) {
+      std::stringstream  lineStream(line);
+      struct SensorsData sensorsData;
+      lineStream >> sensorsData.temperatureSensorData;
+      lineStream >> sensorsData.pressureSensorData;
+      sensorsDataHolder.push_back(sensorsData);
+    }
+  }
   return sensorsDataHolder;
 }
