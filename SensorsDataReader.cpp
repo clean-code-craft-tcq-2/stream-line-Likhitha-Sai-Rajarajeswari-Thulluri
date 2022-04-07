@@ -12,7 +12,7 @@ std::vector<SensorsData> readSensorsData() {
   if (File.is_open())
   {
     std::string line;
-    while(std::gtline(File, line) {
+    while(std::getline(File, line) {
       std::stringstream  lineStream(line);
       struct SensorsData sensorsData;
       lineStream >> sensorsData.temperatureSensorData;
