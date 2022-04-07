@@ -1,8 +1,9 @@
 #include "SensorsDataReader.h"
 #include "BMSData.txt"
 
-#include <fstream>
+#include <ifstream>
 #include <sstream>
+#include<string>
 
 std::vector<SensorsData> readSensorsData() {
   std::vector<SensorsData> sensorsDataHolder;
