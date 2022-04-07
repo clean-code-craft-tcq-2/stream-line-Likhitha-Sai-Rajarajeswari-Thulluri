@@ -1,9 +1,9 @@
 #include "SensorsDataReader.h"
 #include "BMSData.txt"
+
 #include <string>
 #include <fstream>
 #include <sstream>
-#include <iostream>
 
 std::vector<SensorsData> readSensorsData() {
   std::vector<SensorsData> sensorsDataHolder;
@@ -12,7 +12,7 @@ std::vector<SensorsData> readSensorsData() {
   if (File.is_open())
   {
     std::string line;
-    while(std::getline(File, line) {
+    while(std::getline(File, line)) {
       std::stringstream  lineStream(line);
       struct SensorsData sensorsData;
       lineStream >> sensorsData.temperatureSensorData;
