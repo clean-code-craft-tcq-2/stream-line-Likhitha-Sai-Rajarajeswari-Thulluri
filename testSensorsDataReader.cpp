@@ -5,7 +5,7 @@
 
 TEST_CASE("simulate and read data from sensors") {
   std::vector<SensorsData> sensorsDataHolder;
-  Struct SensorsData sensorsData;
+  struct SensorsData sensorsData;
   sensorsData.temperatureSensorData = 21;
   sensorsData.pressureSensorData = 15;
   sensorsDataHolder.push_back(sensorsData);
