@@ -16,17 +16,6 @@ std::vector<SensorsData> readSensorsData() {
       File >>  sensorsData.pressureSensorData;
       sensorsDataHolder.push_back(sensorsData);
     }
-    
-    
-    
-    /*std::string line;
-    while(std::getline(File, line)) {
-      std::stringstream  lineStream(line);
-      struct SensorsData sensorsData;
-      lineStream >> sensorsData.temperatureSensorData;
-      lineStream >> sensorsData.pressureSensorData;
-      sensorsDataHolder.push_back(sensorsData);
-    }*/
   }
   return sensorsDataHolder;
 }
