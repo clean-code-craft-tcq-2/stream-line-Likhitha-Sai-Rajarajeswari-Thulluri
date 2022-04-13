@@ -11,8 +11,8 @@ struct SensorsData{
     }
 };
   
-std::vector<SensorsData> readSensorsData();
+std::vector<SensorsData> readSensorsData(const char* fileName);
 
 void printOnConsole(SensorsData sensorsData);
 
-void inferSensorData();
+void inferSensorData(const char* fileName);
