@@ -13,6 +13,6 @@ struct SensorsData{
   
 std::vector<SensorsData> readSensorsData();
 
-void printOnConsole(float temperature, float pressure);
+void printOnConsole(SensorsData sensorsData);
 
 void inferSensorData();
