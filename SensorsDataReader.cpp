@@ -5,10 +5,10 @@
 
 #include "SensorsDataReader.h"
 
-std::vector<SensorsData> readSensorsData() {
+std::vector<SensorsData> readSensorsData(const char* fileName) {
   std::vector<SensorsData> sensorsDataHolder;
   std::ifstream File;
-  File.open("BMSData.txt", std::ios_base::out);
+  File.open(fileName, std::ios_base::out);
   if (File.is_open())
   {
     struct SensorsData sensorsData;
@@ -25,9 +25,9 @@ void printOnConsole(SensorsData sensorsData)
   std::cout<<sensorsData.temperatureSensorData<<", "<<sensorsData.pressureSensorData<<std::endl;
 }
 
-void inferSensorData()
+void inferSensorData(const char* fileName)
 {
-  std::vector<SensorsData> sensorsDataHolder = readSensorsData();
+  std::vector<SensorsData> sensorsDataHolder = readSensorsData(fileName);
   for(SensorsData sensorsData: sensorsDataHolder) 
   {
     printOnConsole(sensorsData);
