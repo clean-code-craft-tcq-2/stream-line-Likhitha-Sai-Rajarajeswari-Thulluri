@@ -1,8 +1,8 @@
 #include<vector>
 
 struct SensorsData{
-  int temperatureSensorData;
-  int pressureSensorData;
+  float temperatureSensorData;
+  float pressureSensorData;
   
   bool operator==(const SensorsData &other) const {
      if((temperatureSensorData==other.temperatureSensorData) && (pressureSensorData==other.pressureSensorData))
