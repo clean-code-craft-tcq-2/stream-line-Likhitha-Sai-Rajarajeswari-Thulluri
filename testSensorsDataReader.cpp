@@ -3,7 +3,7 @@
 #include "test/catch.hpp"
 #include "SensorsDataReader.h"
 
-TEST_CASE("simulate and read data from sensors") {
+/*TEST_CASE("simulate and read data from sensors") {
   std::vector<SensorsData> sensorsDataHolder;
   struct SensorsData sensorsData;
   sensorsData.temperatureSensorData = 21;
@@ -13,4 +13,16 @@ TEST_CASE("simulate and read data from sensors") {
   sensorsData.pressureSensorData = 5;
   sensorsDataHolder.push_back(sensorsData);
   REQUIRE(readSensorsData() == sensorsDataHolder);
+}*/
+
+TEST_CASE("simulate and read data from sensors") {
+  std::vector<SensorsData> sensorsDataHolder = readSensorsData();
+  REQUIRE(sensorsDataHolder[45].temperatureSensorData == 36.4);
+  REQUIRE(sensorsDataHolder[45].pressureSensorData == 27.3);
+     
+  REQUIRE(sensorsDataHolder[22].temperatureSensorData == 38);
+  REQUIRE(sensorsDataHolder[22].pressureSensorData == 27);
+  
+  REQUIRE(sensorsDataHolder[31].temperatureSensorData == 37.6);
+  REQUIRE(sensorsDataHolder[31].pressureSensorData == 28.9);
 }
