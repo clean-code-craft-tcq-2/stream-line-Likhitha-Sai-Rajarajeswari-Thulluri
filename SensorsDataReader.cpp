@@ -19,3 +19,17 @@ std::vector<SensorsData> readSensorsData() {
   }
   return sensorsDataHolder;
 }
+
+void printOnConsole(SensorsData sensorsData)
+{
+  std::cout<<sensorsData.temperatureSensorData<<", "<<sensorsData.pressureSensorData<<std::endl;
+}
+
+void inferSensorData()
+{
+  std::vector<SensorsData> sensorsDataHolder = readSensorsData();
+  for(SensorsData sensorsData: sensorsDataHolder) 
+  {
+    printOnConsole(sensorsData);
+  }    
+}
