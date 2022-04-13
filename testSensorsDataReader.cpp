@@ -1,5 +1,4 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include <iostream>
 #include "test/catch.hpp"
 #include "SensorsDataReader.h"
 
@@ -17,15 +16,13 @@
 
 TEST_CASE("simulate and read data from sensors") {
   std::vector<SensorsData> sensorsDataHolder = readSensorsData();
-  std::cout<<sensorsDataHolder[46].temperatureSensorData<<std::endl;
-  std::cout<<sensorsDataHolder[46].pressureSensorData<<std::endl;;
   
-  REQUIRE(sensorsDataHolder[46].temperatureSensorData == 36.4);
-  REQUIRE(sensorsDataHolder[46].pressureSensorData == 27.3);
+  REQUIRE(sensorsDataHolder[44].temperatureSensorData == 36.4);
+  REQUIRE(sensorsDataHolder[44].pressureSensorData == 27.3);
      
-  REQUIRE(sensorsDataHolder[23].temperatureSensorData == 38);
-  REQUIRE(sensorsDataHolder[23].pressureSensorData == 27);
+  REQUIRE(sensorsDataHolder[21].temperatureSensorData == 38);
+  REQUIRE(sensorsDataHolder[21].pressureSensorData == 27);
   
-  REQUIRE(sensorsDataHolder[32].temperatureSensorData == 37.6);
-  REQUIRE(sensorsDataHolder[32].pressureSensorData == 28.9);
+  REQUIRE(sensorsDataHolder[30].temperatureSensorData == 37.6);
+  REQUIRE(sensorsDataHolder[30].pressureSensorData == 28.9);
 }
