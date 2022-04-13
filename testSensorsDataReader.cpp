@@ -21,3 +21,9 @@ TEST_CASE("simulate and read data from sensors") {
   sensorsData.pressureSensorData = sensorsDataHolder[30].pressureSensorData;
   REQUIRE(sensorsDataHolder[30] == sensorsData);
 }
+
+TEST_CASE("simulate and read data from wrong file") {
+  std::vector<SensorsData> sensorsDataHolder = readSensorsData("BMSDtaa.txt");
+  
+  REQUIRE(sensorsDataHolder.size() == 0);
+}
