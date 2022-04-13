@@ -17,12 +17,12 @@
 TEST_CASE("simulate and read data from sensors") {
   std::vector<SensorsData> sensorsDataHolder = readSensorsData();
   
-  REQUIRE(sensorsDataHolder[44].temperatureSensorData == 36.4);
-  REQUIRE(sensorsDataHolder[44].pressureSensorData == 27.3);
+  REQUIRE(sensorsDataHolder[44].temperatureSensorData == 36.4f);
+  REQUIRE(sensorsDataHolder[44].pressureSensorData == 27.3f);
      
-  REQUIRE(sensorsDataHolder[21].temperatureSensorData == 38);
-  REQUIRE(sensorsDataHolder[21].pressureSensorData == 27);
+  REQUIRE(sensorsDataHolder[21].temperatureSensorData == 38f);
+  REQUIRE(sensorsDataHolder[21].pressureSensorData == 27f);
   
-  REQUIRE(sensorsDataHolder[30].temperatureSensorData == 37.6);
-  REQUIRE(sensorsDataHolder[30].pressureSensorData == 28.9);
+  REQUIRE(sensorsDataHolder[30].temperatureSensorData == 37.6f);
+  REQUIRE(sensorsDataHolder[30].pressureSensorData == 28.9f);
 }
