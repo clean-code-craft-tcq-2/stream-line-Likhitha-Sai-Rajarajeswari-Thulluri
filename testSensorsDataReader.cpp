@@ -25,12 +25,11 @@ TEST_CASE("simulate and read data from sensors") {
   
   REQUIRE(sensorsDataHolder[44] == sensorsData);
   
-  REQUIRE(sensorsDataHolder[44].temperatureSensorData == 36.4);
-  REQUIRE(sensorsDataHolder[44].pressureSensorData == 27.3);
-     
-  REQUIRE(sensorsDataHolder[21].temperatureSensorData == 38);
-  REQUIRE(sensorsDataHolder[21].pressureSensorData == 27);
+  sensorsData.temperatureSensorData = sensorsDataHolder[21].temperatureSensorData;
+  sensorsData.pressureSensorData = sensorsDataHolder[21].pressureSensorData;
+  REQUIRE(sensorsDataHolder[21] == sensorsData);
   
-  REQUIRE(sensorsDataHolder[30].temperatureSensorData == 37.6);
-  REQUIRE(sensorsDataHolder[30].pressureSensorData == 28.9);
+  sensorsData.temperatureSensorData = sensorsDataHolder[30].temperatureSensorData;
+  sensorsData.pressureSensorData = sensorsDataHolder[30].pressureSensorData;
+  REQUIRE(sensorsDataHolder[30] == sensorsData);
 }
