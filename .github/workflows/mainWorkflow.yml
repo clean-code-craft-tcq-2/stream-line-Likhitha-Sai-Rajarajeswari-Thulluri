@@ -47,7 +47,8 @@ jobs:
     
     - name: Receiver - Run and collect coverage
       run: |
-          coverage run --branch sender_receiver.test.py | receiver.test.py
+          python sender_receiver.test.py | python receiver.test.py
+          coverage run --branch receiver.test.py
           coverage html
           coverage report
     - name: Upload Receiver test coverage
