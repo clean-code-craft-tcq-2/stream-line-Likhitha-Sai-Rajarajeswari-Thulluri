@@ -28,8 +28,6 @@ class Receiver:
                 continue
             self.temperatureReadValues.append(streamValue.split(',')[0])
             self.PressureReadValues.append(streamValue.split(',')[1])
-        print('self.temperatureReadValues',self.temperatureReadValues)
-        print('self.PressureReadValues',self.PressureReadValues)
         
     def print_data_to_console(self,data_to_write):
         print(data_to_write)
