@@ -22,8 +22,10 @@ class Receiver:
         self.PressureReadValues = []
     
     def getRawValuesFromConsole(self):
-        incomingStreamLines = sys.stdin.readlines()
-        for streamValue in incomingStreamLines:
+        self.incomingStreamLines = sys.stdin.readlines()
+
+    def process_stream_data(self):
+        for streamValue in self.incomingStreamLines:
             streamValue = streamValue.strip()
             if streamValue == '\n':
                 continue
