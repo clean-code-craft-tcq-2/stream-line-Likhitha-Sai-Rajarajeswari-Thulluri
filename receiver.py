@@ -29,8 +29,8 @@ class Receiver:
             streamValue = streamValue.strip()
             if streamValue == '\n':
                 continue
-            self.temperatureReadValues.append(streamValue.split(',')[0])
-            self.PressureReadValues.append(streamValue.split(',')[1])
+            self.temperatureReadValues.append(float(streamValue.split(',')[0]))
+            self.PressureReadValues.append(float(streamValue.split(',')[1]))
         
     def print_data_to_console(self,data_to_write):
         print(data_to_write)

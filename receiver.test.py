@@ -19,7 +19,7 @@ class tdd_sender_test(unittest.TestCase):
     #Tests for reading data and processing result
     def test_read_data_process_result(self):
         Receiver_object = Receiver()
-        self.incomingStreamLines = ['1,1','2,2','\n','3,3','4,4','5,5']
+        Receiver_object.incomingStreamLines = ['1,1','2,2','3,3','4,4','5,5']
         Receiver_object.process_stream_data()
         Receiver_object.process_infer_data()
         self.assertEqual(Receiver_object.max_temp,5)
