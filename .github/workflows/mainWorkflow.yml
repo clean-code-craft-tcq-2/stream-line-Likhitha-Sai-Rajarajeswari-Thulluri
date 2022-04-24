@@ -47,7 +47,7 @@ jobs:
     
     - name: Receiver - Run and collect coverage
       run: |
-          python sender_receiver.test.py | python receiver.test.py
+          python sender_receiver.test.py
           coverage run --branch receiver.test.py
           coverage html
           coverage report
@@ -59,4 +59,4 @@ jobs:
           retention-days: 21    
     - name: Sender | Receiver
       run: |
-          gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary | python receiver.test.py
+          gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary | python sender_receiver.test.py | python receiver.test.py
