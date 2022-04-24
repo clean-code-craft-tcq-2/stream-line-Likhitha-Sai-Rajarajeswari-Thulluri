@@ -44,3 +44,17 @@ jobs:
         name: coverage
         path: ./*.html
         retention-days: 21
+        
+    - name: Sender | Receiver
+      run: |
+          gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary | python receiver.test.py
+          coverage run --branch receiver.test.py
+          coverage html
+          coverage report
+          
+    - name: Upload Receiver test coverage
+      uses: actions/upload-artifact@v2
+      with:
+          name: coverage
+          path: ./htmlcov
+          retention-days: 21
