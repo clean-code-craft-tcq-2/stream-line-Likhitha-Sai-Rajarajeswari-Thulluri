@@ -19,10 +19,15 @@ class tdd_sender_test(unittest.TestCase):
     #Tests for reading data and processing result
     def test_read_data_process_result(self):
         Receiver_object = Receiver()
-        for index in range (10):
-            sys.stdout.write(str(random.randrange(0,10,3))+','+str(random.randrange(0,10,3)))
-        Receiver_object.getRawValuesFromConsole()
+        Receiver_object.temperatureReadValues = [1,2,3,4,5]
+        Receiver_object.PressureReadValues = [1,2,3,4,5]
         Receiver_object.process_infer_data()
+        self.assertEqual(Receiver_object.max_temp,5)
+        self.assertEqual(Receiver_object.max_pr,5)
+        self.assertEqual(Receiver_object.min_temp,1)
+        self.assertEqual(Receiver_object.min_pr,1)
+        self.assertEqual(Receiver_object.mov_avg_temp,['-', '-', '-', '-', 3.0])
+        self.assertEqual(Receiver_object.mov_avg_pr,['-', '-', '-', '-', 3.0])
         
         
     #Tests for receiver

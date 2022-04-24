@@ -17,10 +17,11 @@ class Compute_Statistics:
         return list_simpleMovingAverage
 
 class Receiver:
-    
-    def getRawValuesFromConsole(self):
+    def __init__(self):
         self.temperatureReadValues = []
         self.PressureReadValues = []
+    
+    def getRawValuesFromConsole(self):
         incomingStreamLines = sys.stdin.readlines()
         for streamValue in incomingStreamLines:
             streamValue = streamValue.strip()
@@ -35,11 +36,24 @@ class Receiver:
 
     def process_infer_data(self):
         obj_Compute_Statistics = Compute_Statistics()
-        self.print_data_to_console(f"The maximum temperature value is {obj_Compute_Statistics.getMaximumValue(self.temperatureReadValues)}")
-        self.print_data_to_console(f"The maximum pressure value is {obj_Compute_Statistics.getMaximumValue(self.PressureReadValues)}")
+        self.max_temp = obj_Compute_Statistics.getMaximumValue(self.temperatureReadValues)
+        self.max_pr = obj_Compute_Statistics.getMaximumValue(self.PressureReadValues)
+        self.min_temp = obj_Compute_Statistics.getMinimumValue(self.temperatureReadValues)
+        self.min_pr = obj_Compute_Statistics.getMinimumValue(self.PressureReadValues)
+        self.mov_avg_temp = obj_Compute_Statistics.get_SimpleMovingAverage(self.temperatureReadValues, 5)
+        self.mov_avg_pr = obj_Compute_Statistics.get_SimpleMovingAverage(self.PressureReadValues, 5)
+        self.print_data_to_console(f"The maximum temperature value is {self.max_temp}")
+        self.print_data_to_console(f"The maximum pressure value is {self.max_pr}")
 
-        self.print_data_to_console(f"The minimum temperature value is {obj_Compute_Statistics.getMinimumValue(self.temperatureReadValues)}")
-        self.print_data_to_console(f"The minimum pressure value is {obj_Compute_Statistics.getMinimumValue(self.PressureReadValues)}")
+        self.print_data_to_console(f"The minimum temperature value is {self.min_temp}")
+        self.print_data_to_console(f"The minimum pressure value is {self.min_pr}")
 
-        self.print_data_to_console(f"The 5 point moving average for temperature values is :{obj_Compute_Statistics.get_SimpleMovingAverage(self.temperatureReadValues, 5)}\n")
-        self.print_data_to_console(f"The 5 point moving average for pressure values is :{obj_Compute_Statistics.get_SimpleMovingAverage(self.PressureReadValues, 5)}\n")
+        self.print_data_to_console(f"The 5 point moving average for temperature values is :{self.mov_avg_temp}\n")
+        self.print_data_to_console(f"The 5 point moving average for pressure values is :{self.mov_avg_pr}\n")
+            
+    
+
+
+    
+    
+    
