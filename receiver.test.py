@@ -19,8 +19,8 @@ class tdd_sender_test(unittest.TestCase):
     #Tests for reading data and processing result
     def test_read_data_process_result(self):
         Receiver_object = Receiver()
-        #for index in range (10):
-            #sys.stdout.write(str(random.randrange(0,10,3))+','+str(random.randrange(0,10,3)))
+        for index in range (10):
+            sys.stdout.write(str(random.randrange(0,10,3))+','+str(random.randrange(0,10,3)))
         Receiver_object.getRawValuesFromConsole()
         Receiver_object.process_infer_data()
         
