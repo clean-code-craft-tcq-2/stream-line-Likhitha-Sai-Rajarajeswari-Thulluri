@@ -16,8 +16,7 @@ class Compute_Statistics:
             list_simpleMovingAverage.append(round(sum(list_reading_values[index-number_of_points+1:index+1])/number_of_points, 2))
         return list_simpleMovingAverage
 
-class Receiver:
-    
+class Receiver: 
     def getRawValuesFromConsole(self):
         self.temperatureReadValues = []
         self.PressureReadValues = []
@@ -28,8 +27,8 @@ class Receiver:
                 continue
             self.temperatureReadValues.append(streamValue.split(',')[0])
             self.PressureReadValues.append(streamValue.split(',')[1])
-        print('self.temperatureReadValues',self.temperatureReadValues)
-        print('self.PressureReadValues',self.PressureReadValues)
+        #print('self.temperatureReadValues',self.temperatureReadValues)
+        #print('self.PressureReadValues',self.PressureReadValues)
         
     def print_data_to_console(self,data_to_write):
         print(data_to_write)
