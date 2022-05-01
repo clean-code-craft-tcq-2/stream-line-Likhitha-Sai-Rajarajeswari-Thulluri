@@ -8,7 +8,7 @@ TEST_CASE("simulate and read data from sensors") {
   REQUIRE(sensorsDataHolder.size() == 50);
   
   struct SensorsData sensorsData;
-  sensorsData.temperatureSensorData = sensorsDataHolder[44].temperatureSensorData;
+  sensorsData.temperatureSensorData = 36.4;
   sensorsData.pressureSensorData = sensorsDataHolder[44].pressureSensorData;
   
   REQUIRE(sensorsDataHolder[44] == sensorsData);
