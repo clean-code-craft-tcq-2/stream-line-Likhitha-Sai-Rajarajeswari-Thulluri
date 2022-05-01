@@ -9,16 +9,16 @@ TEST_CASE("simulate and read data from sensors") {
   
   struct SensorsData sensorsData;
   sensorsData.temperatureSensorData = 36.4;
-  sensorsData.pressureSensorData = sensorsDataHolder[44].pressureSensorData;
+  sensorsData.pressureSensorData = 27.3;
   
   REQUIRE(sensorsDataHolder[44] == sensorsData);
   
-  sensorsData.temperatureSensorData = sensorsDataHolder[21].temperatureSensorData;
-  sensorsData.pressureSensorData = sensorsDataHolder[21].pressureSensorData;
+  sensorsData.temperatureSensorData = 38;
+  sensorsData.pressureSensorData = 27;
   REQUIRE(sensorsDataHolder[21] == sensorsData);
   
-  sensorsData.temperatureSensorData = sensorsDataHolder[30].temperatureSensorData;
-  sensorsData.pressureSensorData = sensorsDataHolder[30].pressureSensorData;
+  sensorsData.temperatureSensorData = 37.6;
+  sensorsData.pressureSensorData = 28.9;
   REQUIRE(sensorsDataHolder[30] == sensorsData);
 }
 
